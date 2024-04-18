@@ -1,0 +1,65 @@
+body{
+    margin: 0px;
+    box-sizing: border-box;
+}
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+nav{
+    background-color:black;
+        list-style-type:none;
+        background-color:black;
+        padding: 0px;
+        margin:0px;
+        overflow: hidden;
+        
+    }
+    nav a{
+        color:rgb(219, 31, 31);
+        text-decoration: none;
+        padding: 15px;
+        display: block;
+        text-align: center;
+    }
+    nav a:hover{
+        background-color:rgb(31, 30, 30);
+    
+    }
+    nav li{
+        float: left;
+        
+    }
+
+
+/* Alert button styling */
+
+    .alert-button {
+        display: flex;
+        background: rgb(49, 47, 47);
+        width: inherit;
+        height: inherit;
+        align-content: center;
+        justify-content: center;
+        margin: auto;
+        padding: 10%;
+    }
+
+    #alert {
+        display: block;
+        align-self: center;
+        background-color: red;
+        width: 50ch;
+        height: 50ch;
+        border-radius: 100%;
+        border-color: black;
+        border-width: 1ch;
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+
+    }

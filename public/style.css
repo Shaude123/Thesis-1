@@ -5,34 +5,7 @@
 
 main{
     background: rgb(49, 47, 47);
-    margin-left: 20px;
-    margin-right: 20px;
 }
-
-nav{
-    background-color:black;
-        list-style-type:none;
-        background-color:black;
-        padding: 0px;
-        margin:0px;
-        overflow: hidden;
-        
-    }
-    nav a{
-        color:rgb(219, 31, 31);
-        text-decoration: none;
-        padding: 15px;
-        display: block;
-        text-align: center;
-    }
-    nav a:hover{
-        background-color:rgb(31, 30, 30);
-    
-    }
-    nav li{
-        float: left;
-        
-    }
 
 
 /* Alert button styling */

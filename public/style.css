@@ -1,17 +1,14 @@
-body{
-    margin: 0px;
-    box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
 }
+
 main{
+    background: rgb(49, 47, 47);
     margin-left: 20px;
     margin-right: 20px;
 }
 
-*{
-    padding: 0px;
-    margin: 0px;
-    
-}
 nav{
     background-color:black;
         list-style-type:none;
@@ -42,7 +39,6 @@ nav{
 
     .alert-button {
         display: flex;
-        background: rgb(49, 47, 47);
         width: inherit;
         height: inherit;
         align-content: center;

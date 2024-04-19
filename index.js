@@ -48,8 +48,6 @@ app.use('/message', messageRoute);
 
 
 
-
-
 app.use(express.static(publicPath));
 
 const middle = express.urlencoded({

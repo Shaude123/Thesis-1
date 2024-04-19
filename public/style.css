@@ -2,9 +2,13 @@
     margin: 0;
     padding: 0;
 }
+body {
+    overflow: hidden;
+}
 
-main{
+main {
     background: rgb(49, 47, 47);
+    height: 100dvh;
 }
 
 
@@ -12,12 +16,13 @@ main{
 
     .alert-button {
         display: flex;
-        width: inherit;
-        height: inherit;
-        align-content: center;
+        align-items: center;
+        width: 100dvw;
+        height: 100dvh;
+        /* align-content: center; */
         justify-content: center;
-        margin: auto;
-        padding: 10%;
+        margin: 0;
+        padding: 0;
     }
 
     #alert {

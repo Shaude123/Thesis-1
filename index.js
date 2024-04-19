@@ -5,9 +5,7 @@ const cors = require('cors')
 // const http = require('http'); //? May not need
 require('dotenv').config()
 
-
 const contactsRoute = require('./routes/Contacts');
-const locationRoute = require('./routes/Locations');
 const messageRoute = require('./routes/Message');
 
 
@@ -45,7 +43,6 @@ client.connect(function(err) {
 app.set("view engine", "ejs");
 app.use(cors()); //Allow request form any IP
 app.use('/contacts', contactsRoute);
-app.use('/location', locationRoute);
 app.use('/message', messageRoute);
 
 
@@ -53,7 +50,7 @@ app.use('/message', messageRoute);
 
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(publicPath));
 
 const middle = express.urlencoded({
     extended: false,
@@ -65,6 +62,21 @@ const middle = express.urlencoded({
 
 app.get("/", (req, res) => {
     res.end()
+})
+
+app.get("/location", (req, res) => {
+    fetch('http://ip-api.com/json/?fields=61439')
+    .then((res) => res.json())
+    .then((res) => {
+        let latitude = res.lat;
+        let longitude = res.lon;
+        let zip = res.zip;
+
+    });
+
+
+
+
 })
 /**
  * Custom error handling page

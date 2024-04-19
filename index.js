@@ -1,17 +1,15 @@
 const express = require('express');
 const mysql = require('mysql');
 const path = require('path');
-const fs = require('fs');
 const cors = require('cors')
 // const http = require('http'); //? May not need
 require('dotenv').config()
 
 
-const contactsRoute = require('./routes/Contacts')
-const locationRoute = require('./routes/Locations')
-const messageRoute = require('./routes/Message')
-const signUpRoute = require('./routes/Signup')
-const signInRoute = require('./routes/Signin')
+const contactsRoute = require('./routes/Contacts');
+const locationRoute = require('./routes/Locations');
+const messageRoute = require('./routes/Message');
+
 
 
 
@@ -19,6 +17,8 @@ const signInRoute = require('./routes/Signin')
 const app = express();
 const port = process.env.PORT || 3000;
 
+
+let publicPath = path.join(__dirname, 'public');
 
 /**
  * Database connection with mysql
@@ -42,12 +42,11 @@ client.connect(function(err) {
  * Middleware
  */
 
+app.set("view engine", "ejs");
 app.use(cors()); //Allow request form any IP
 app.use('/contacts', contactsRoute);
 app.use('/location', locationRoute);
 app.use('/message', messageRoute);
-app.use('/signup', signUpRoute);
-app.use('/signin', signInRoute);
 
 
 
@@ -63,9 +62,6 @@ const middle = express.urlencoded({
 
 
 
-// const html = fs.readFileSync(/*<- HTML File*/ 'utf-8');
-
-
 
 app.get("/", (req, res) => {
     res.end()
@@ -74,7 +70,7 @@ app.get("/", (req, res) => {
  * Custom error handling page
  */
 app.get("*", (req, res) => {
-    //do something
+    res.render("404", {title: 404});
 })
 
 app.post("/submit", middle, (req, res) => {
